@@ -1,15 +1,12 @@
 html,
 body {
-    background-color:cadetblue;
+    background-color:#121212;
     font-family: 'Courier New', Courier, monospace;
+    margin: 0;
 }
 
 pre {
     font-size: 16px;
-}
-
-#app {
-    padding: 1rem 2rem;
 }
 
 #results {
@@ -21,12 +18,16 @@ pre {
     flex-flow: "flex-start";
     align-content: flex-start;
     align-items: "flex-start";
-    margin-top: 1rem;
+    margin: 2rem;
+}
+
+#buttons {
+    margin: 1rem 0 0 2rem;
 }
 
 .calculation {
     display: flex;
-    background-color: whitesmoke;
+    background-color: white;
     border-bottom: 1px solid gray;
     border-radius: 3px;
     padding: 5px;
@@ -42,6 +43,10 @@ header {
     font-weight: bolder;
     align-items: center;
     gap: 1rem;
+    background-color: black;
+    border-bottom: 1px solid #222;
+    padding: 0 2rem;
+    margin: 0;
 }
 
 header > p {

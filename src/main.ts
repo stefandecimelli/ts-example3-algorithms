@@ -1,15 +1,9 @@
 import initfib from "./initfib";
-
-const fibonacci = initfib();
-const results = document.getElementById("results");
-const button = document.getElementById("stop") as HTMLButtonElement;
+import {results, button, reset} from "./elements";
 
 let loop: NodeJS.Timeout;
 let switcher = true;
-
-if (!button || !results) {
-    throw Error("DOM not recognized!");
-}
+let fibonacci = initfib();
 
 const addCalculation = () => {
     const [count, next] = fibonacci();
@@ -25,7 +19,7 @@ const addCalculation = () => {
 }
 
 const switchButtonText = () => {
-    button.textContent = button.textContent === "Start" ? "Stop" : "Start";
+    button.textContent = switcher ? "Start" : "Stop";
 }
 
 button.addEventListener("click", () => {
@@ -34,6 +28,15 @@ button.addEventListener("click", () => {
     } else {
         clearInterval(loop);
     }
-    switchButtonText();
     switcher = !switcher;
+    switchButtonText();
 });
+
+reset.addEventListener("click", () => {
+    clearInterval(loop);
+    button.disabled = false;
+    fibonacci = initfib();
+    results.innerHTML = '';
+    switcher = true;
+    switchButtonText();
+})
