@@ -1,0 +1,18 @@
+{
+  "name": "ts-fibonacci-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.ts",
+  "scripts": {
+    "start": "tsc && npm run minify && npx http-server public",
+    "minify": "uglifyjs --compress --mangle --output ./public/index.min.js -- ./public/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "typescript": "^5.3.3",
+    "uglify-js": "^3.17.4"
+  }
+}

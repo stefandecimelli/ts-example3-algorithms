@@ -1,0 +1,25 @@
+html,
+body {
+    background-color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    color: cadetblue;
+    margin-bottom: 1rem;
+}
+
+pre {
+    font-size: 16px;
+}
+
+#app {
+    padding: 1rem 2rem;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    max-height: 75vh;
+    flex-wrap: wrap;
+}
