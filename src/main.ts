@@ -13,7 +13,7 @@ if (!button || !results) {
 
 const addCalculation = () => {
     const [count, next] = fibonacci();
-    if (count > 100 ) {
+    if (count > 100) {
         clearInterval(loop);
         button.disabled = true;
         return switchButtonText();

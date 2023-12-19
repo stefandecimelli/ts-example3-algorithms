@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     mode: 'production',
-    entry: './app/main.ts',
+    entry: './src/main.ts',
     output: {
         filename: 'bundle.min.js',
         path: path.resolve(__dirname, 'public'),
