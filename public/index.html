@@ -5,24 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <title>Fibonacci</title>
 </head>
 
 <body>
     <div id="app">
-        <h1>Fibonacci</h1>
-        <div id="results">
-            <pre>0</pre>
-            <pre>1</pre>
-        </div>
+        <header>
+            <h1>Fibonacci</h1>
+            <p>Calculates the first 100 elements of the fibonacci sequence</p>
+        </header>
+        <button id="stop">Start</button>
+        <main id="results"></main>
     </div>
-    <script src="/index.min.js" defer>
-        const fibonacci = fib()
-        console.log(fibonacci())
-        console.log(fibonacci())
-        console.log(fibonacci())
-        console.log(fibonacci())
-        console.log(fibonacci())
+    <script type="module" src="/bundle.min.js" defer>
     </script>
 </body>
 

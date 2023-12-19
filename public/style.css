@@ -1,12 +1,7 @@
 html,
 body {
-    background-color: antiquewhite;
+    background-color:cadetblue;
     font-family: 'Courier New', Courier, monospace;
-}
-
-h1 {
-    color: cadetblue;
-    margin-bottom: 1rem;
 }
 
 pre {
@@ -20,6 +15,35 @@ pre {
 #results {
     display: flex;
     flex-direction: column;
-    max-height: 75vh;
+    max-height: 76vh;
     flex-wrap: wrap;
+    gap: 1rem;
+    flex-flow: "flex-start";
+    align-content: flex-start;
+    align-items: "flex-start";
+    margin-top: 1rem;
+}
+
+.calculation {
+    display: flex;
+    background-color: whitesmoke;
+    border-bottom: 1px solid gray;
+    border-radius: 3px;
+    padding: 5px;
+    color: black;
+    min-width: 7rem;
+    height: 1rem;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    color: whitesmoke;
+    font-weight: bolder;
+    align-items: center;
+    gap: 1rem;
+}
+
+header > p {
+    margin-bottom: 7px;
 }
