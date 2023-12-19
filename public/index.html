@@ -9,18 +9,25 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-    <title>Fibonacci</title>
+    <title>Algoritm Selector</title>
 </head>
 
 <body>
     <div id="app">
         <header>
-            <h1>Fibonacci</h1>
-            <p>Calculates the first 100 elements of the fibonacci sequence</p>
+            <h1>Algoritm Selector</h1>
+            <p>Calculates the first 100 elements of the selected algorithm sequence</p>
         </header>
         <div id="buttons">
             <button id="stop">Start</button>
             <button id="reset">Reset</button>
+            <select id="algorithm">
+                <option value="fib">Fibinocci</option>
+                <option value="square">Square</option>
+                <option value="root">Square Root</option>
+                <option value="log2">Log<sub>2</sub></option>
+                <option value="log">Log<sub>10</sub></option>
+            </select>
         </div>
         <main id="results"></main>
     </div>

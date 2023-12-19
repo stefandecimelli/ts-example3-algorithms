@@ -15,10 +15,10 @@ pre {
     max-height: 76vh;
     flex-wrap: wrap;
     gap: 1rem;
-    flex-flow: "flex-start";
     align-content: flex-start;
-    align-items: "flex-start";
     margin: 2rem;
+    max-width: 100vw;
+   overflow: hidden;
 }
 
 #buttons {

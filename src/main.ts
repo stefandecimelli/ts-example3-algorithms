@@ -1,12 +1,17 @@
-import initfib from "./initfib";
-import {results, button, reset} from "./elements";
+import getAlgorithm from "./algorithms";
+import { results, button, reset, algorithmSelector } from "./elements";
+
+const getSelectorValue = () => {
+    return algorithmSelector.options[algorithmSelector.selectedIndex].value;
+}
 
 let loop: NodeJS.Timeout;
 let switcher = true;
-let fibonacci = initfib();
+let algorithm = getSelectorValue();
+let calculator = getAlgorithm(algorithm);
 
 const addCalculation = () => {
-    const [count, next] = fibonacci();
+    const [count, next] = calculator();
     if (count > 100) {
         clearInterval(loop);
         button.disabled = true;
@@ -22,21 +27,30 @@ const switchButtonText = () => {
     button.textContent = switcher ? "Start" : "Stop";
 }
 
-button.addEventListener("click", () => {
+const doReset = () => {
+    clearInterval(loop);
+    button.disabled = false;
+    calculator = getAlgorithm(algorithm);
+    results.innerHTML = '';
+    switcher = true;
+    switchButtonText();
+}
+
+const doStartStop = () => {
     if (switcher) {
-        loop = setInterval(addCalculation, 10);
+        loop = setInterval(addCalculation, 5);
     } else {
         clearInterval(loop);
     }
     switcher = !switcher;
     switchButtonText();
-});
+}
 
-reset.addEventListener("click", () => {
-    clearInterval(loop);
-    button.disabled = false;
-    fibonacci = initfib();
-    results.innerHTML = '';
-    switcher = true;
-    switchButtonText();
-})
+const doChangeAlgorithm = () => {
+    algorithm = getSelectorValue()
+    doReset();
+}
+
+button.addEventListener("click", doStartStop);
+reset.addEventListener("click", doReset)
+algorithmSelector.addEventListener("change", doChangeAlgorithm);
